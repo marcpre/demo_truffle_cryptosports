@@ -48,7 +48,7 @@ App = {
       App.contracts.Adoption.setProvider(App.web3Provider);
 
       // Use our contract to retrieve and mark the adopted pets
-      // return App.markAdopted();
+      return App.markBought();
     });
 
     return App.bindEvents();
@@ -57,19 +57,25 @@ App = {
   bindEvents: function() {
     $(document).on('click', '.btn-buy', App.purchase());
   },
-  
+ /*
   bindEvents: function() {
+    var owner = $('#owner').val();
+    var name = $('#name').val();
+    var price = $('#price').val();
+
+    console.log(owner + " " + name + " " + price)
+    
     //createPromoPerson(address _owner, string _name, uint256 _price)
-    $(document).on('click', '.btn-create', App.createPromoPerson());
+    $(document).on('click', '.btn-create', App.createPromoPerson(owner, name, price));
   },
+*/
+  markBought: function(buyer, account) {
+    var buyerInstance;
 
-  markAdopted: function(adopters, account) {
-    var adoptionInstance;
+    App.contracts.CryptoSportsToken.deployed().then(function(instance) {
+      buyerInstance = instance;
 
-    App.contracts.Adoption.deployed().then(function(instance) {
-      adoptionInstance = instance;
-
-      return adoptionInstance.getAdopters.call();
+      return buyerInstance.getAdopters.call();
     }).then(function(adopters) {
       for (i = 0; i < adopters.length; i++) {
         if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
