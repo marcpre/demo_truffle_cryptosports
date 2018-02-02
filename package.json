@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,11 @@
     "url": "https://github.com/marcpre/demo_truffle_cryptosports/issues"
   },
   "homepage": "https://github.com/marcpre/demo_truffle_cryptosports#readme",
+  "devDependencies": {
+    "ganache-cli": "^6.0.3",
+    "lite-server": "^2.3.0",
+    "truffle": "^4.0.5"
+  },
   "dependencies": {
     "truffle": "^4.0.6"
   }

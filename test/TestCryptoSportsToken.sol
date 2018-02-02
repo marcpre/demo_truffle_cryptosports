@@ -1,21 +1,21 @@
-pragma solidity ^0.4.17;
+pragma solidity ^0.4.18;
 
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
 import "../contracts/CryptoSportsToken.sol";
 
 contract TestCryptoSportsToken {
-    Adoption adoption = Adoption(DeployedAddresses.Adoption());
+    CryptoSportsToken cryptoSports = CryptoSportsToken(DeployedAddresses.CryptoSportsToken());
+    //check for events
 
     // Testing the adopt() function
-    function testUserCanAdoptPet() public {
-      uint returnedId = adoption.adopt(8);
-
-      uint expected = 8;
+    function testCreatePromoPerson() public {
+      cryptoSports.createPromoPerson("0xf7ca47eabf0e98af942fa45a5e8cdc05b7100eb4", "Marcel Hirscher", 1);
     
       Assert.equal(returnedId, expected, "Adoption of pet ID 8 should be recorded.");
     }
-    
+
+/*    
     // Testing retrieval of a single pet's owner
     function testGetAdopterAddressByPetId() public {
       // Expected owner is this contract
@@ -36,5 +36,5 @@ contract TestCryptoSportsToken {
     
       Assert.equal(adopters[8], expected, "Owner of pet ID 8 should be recorded.");
     }
-
+*/
 }

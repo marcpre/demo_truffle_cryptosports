@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "name": "Marcel Hirscher",
+    "picture": "images/Marcel_Hirscher.jpg",
+    "price": "",
+    "transactions": ""
+  },
+  {
+    "id": 1,
+    "name": "Lionel Messi",
+    "picture": "images/Lionel_Messi.jpg",
+    "price": "",
+    "transactions": ""
+  },
+  {
+    "id": 2,
+    "name": "Hermann Maier",
+    "picture": "images/Hermann_Maier.jpg",
+    "price": "",
+    "transactions": ""
+  },
+  {
+    "id": 3,
+    "name": "Anna Fenninger",
+    "picture": "images/Anna_Fenninger.jpg",
+    "price": "",
+    "transactions": ""
+  }
+]

@@ -19,8 +19,8 @@ contract CryptoSportsToken is ERC721 {
   /*** CONSTANTS ***/
 
   /// @notice Name and symbol of the non fungible token, as defined in ERC721.
-  string public constant NAME = "CryptoCelebrities"; // solhint-disable-line
-  string public constant SYMBOL = "CelebrityToken"; // solhint-disable-line
+  string public constant NAME = "CryptoSports"; // solhint-disable-line
+  string public constant SYMBOL = "SportsToken"; // solhint-disable-line
 
   uint256 private startingPrice = 0.001 ether;
   uint256 private constant PROMO_CREATION_LIMIT = 5000;

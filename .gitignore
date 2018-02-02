@@ -49,6 +49,24 @@ typings/
 .node_repl_history
 
 # Output of 'npm pack'
+
+# Logs
+logs
+*.log
+
+# Directories used by tools like mocha & istanbul
+coverage
+shippable
+
+# Dependency directory
+node_modules
+
+# Generated files
+config/development/contracts.json
+config/development/*.sol.js
+config/test/contracts.json
+build
+dist
 *.tgz
 
 # Yarn Integrity file
@@ -56,4 +74,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
