@@ -1,0 +1,23 @@
+{
+  "name": "demo_truffle_cryptosports",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcpre/demo_truffle_cryptosports.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcpre/demo_truffle_cryptosports/issues"
+  },
+  "homepage": "https://github.com/marcpre/demo_truffle_cryptosports#readme",
+  "dependencies": {
+    "truffle": "^4.0.6"
+  }
+}
