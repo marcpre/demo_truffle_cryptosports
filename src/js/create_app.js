@@ -32,48 +32,48 @@ App = {
 
     });
 
-    return App.createPerson();
+    return App.bindEvents();
   },
-  /*
-    bindEvents: function () {
+
+  bindEvents: function () {
+    $(document).on('click', '.btn-create', App.createPerson());
+  },
+
+  createPerson: function () {
+    var cryptosportInstance;
+
+    console.log("test")
+    console.log(owner + " " + name + " " + price)
+
+    //##########
+    //    $(document).on('click', '.btn-create', function () {
+    //      var owner = $('#owner').val();
+    //      var name = $('#name').val();
+    //      var price = $('#price').val();
+
+    console.log("###################")
+    
+    console.log("App: \n");
+    console.log(App);
+    console.log("App.contracts: \n");
+    console.log(App.contracts);
+    
+    console.log("###################")
+    console.log(App.contracts.CryptoSportsToken)
+    
+    App.contracts.CryptoSportsToken.deployed().then(function (instance) {
+      cryptosportInstance = instance;
+
+      console.log(cryptosportInstance)
+
       var owner = $('#owner').val();
       var name = $('#name').val();
       var price = $('#price').val();
       
-      console.log("App: \n");      
-      console.log(App);
-      console.log("App.contracts: \n");      
-      console.log(App.contracts);
-
-      console.log(owner + " " + name + " " + price)
-
-      //createPromoPerson(address _owner, string _name, uint256 _price)
-      $(document).on('click', '.btn-create', App.createPromoPerson(owner, name, price));
-    },
-  */
-  createPerson: function () {
-
-    console.log("test")
-    var cryptosportInstance;
-
-    //##########
-    $(document).on('click', '.btn-create', function () {
-      var owner = $('#owner').val();
-      var name = $('#name').val();
-      var price = $('#price').val();
-
-      console.log(owner + " " + name + " " + price)
-
-      App.contracts.CryptoSportsToken.deployed().then(function (instance) {
-        cryptosportInstance = instance;
-
-        console.log(cryptosportInstance)
-
-        return cryptosportInstance.createPromoPerson(owner, name, price).call();
-      }).catch(function (err) {
-        console.log(err.message);
-      })
-    });
+      return cryptosportInstance.createPromoPerson(owner, name, price).call();
+    }).catch(function (err) {
+      console.log(err.message);
+    })
   },
 };
 
@@ -82,3 +82,6 @@ $(function () {
     App.init();
   });
 });
+
+
+
