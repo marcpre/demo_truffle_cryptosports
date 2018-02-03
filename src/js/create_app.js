@@ -32,24 +32,48 @@ App = {
 
     });
 
-    //App.contracts.CryptoSportsToken.setProvider(App.web3Provider);
-
-    return App.bindEvents();
+    return App.createPerson();
   },
+  /*
+    bindEvents: function () {
+      var owner = $('#owner').val();
+      var name = $('#name').val();
+      var price = $('#price').val();
+      
+      console.log("App: \n");      
+      console.log(App);
+      console.log("App.contracts: \n");      
+      console.log(App.contracts);
 
-  bindEvents: function () {
-    var owner = $('#owner').val();
-    var name = $('#name').val();
-    var price = $('#price').val();
-    
-    console.log("App: \n");      
-    console.log(App);
-    console.log(App.contracts);
+      console.log(owner + " " + name + " " + price)
 
-    console.log(owner + " " + name + " " + price)
+      //createPromoPerson(address _owner, string _name, uint256 _price)
+      $(document).on('click', '.btn-create', App.createPromoPerson(owner, name, price));
+    },
+  */
+  createPerson: function () {
 
-    //createPromoPerson(address _owner, string _name, uint256 _price)
-    $(document).on('click', '.btn-create', App.createPromoPerson(owner, name, price));
+    console.log("test")
+    var cryptosportInstance;
+
+    //##########
+    $(document).on('click', '.btn-create', function () {
+      var owner = $('#owner').val();
+      var name = $('#name').val();
+      var price = $('#price').val();
+
+      console.log(owner + " " + name + " " + price)
+
+      App.contracts.CryptoSportsToken.deployed().then(function (instance) {
+        cryptosportInstance = instance;
+
+        console.log(cryptosportInstance)
+
+        return cryptosportInstance.createPromoPerson(owner, name, price).call();
+      }).catch(function (err) {
+        console.log(err.message);
+      })
+    });
   },
 };
 
