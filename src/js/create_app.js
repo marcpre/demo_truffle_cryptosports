@@ -21,7 +21,6 @@ App = {
   },
 
   initContract: function () {
-
     $.getJSON('CryptoSportsToken.json', function (data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract
       var CryptoSportsTokenArtifact = data;
@@ -30,9 +29,8 @@ App = {
       // Set the provider for our contract
       App.contracts.CryptoSportsToken.setProvider(App.web3Provider);
 
+      return App.bindEvents();
     });
-
-    return App.bindEvents();
   },
 
   bindEvents: function () {
@@ -40,40 +38,42 @@ App = {
   },
 
   createPerson: function () {
+    //event.preventDefault();
     var cryptosportInstance;
 
     console.log("test")
     console.log(owner + " " + name + " " + price)
-
-    //##########
-    //    $(document).on('click', '.btn-create', function () {
-    //      var owner = $('#owner').val();
-    //      var name = $('#name').val();
-    //      var price = $('#price').val();
-
     console.log("###################")
-    
+
     console.log("App: \n");
     console.log(App);
     console.log("App.contracts: \n");
     console.log(App.contracts);
-    
+
     console.log("###################")
     console.log(App.contracts.CryptoSportsToken)
-    
-    App.contracts.CryptoSportsToken.deployed().then(function (instance) {
-      cryptosportInstance = instance;
 
-      console.log(cryptosportInstance)
+    web3.eth.getAccounts(function (error, accounts) {
+      if (error) {
+        console.log(error);
+      }
 
-      var owner = $('#owner').val();
-      var name = $('#name').val();
-      var price = $('#price').val();
-      
-      return cryptosportInstance.createPromoPerson(owner, name, price).call();
-    }).catch(function (err) {
-      console.log(err.message);
-    })
+      var account = accounts[0];
+
+      App.contracts.CryptoSportsToken.deployed().then(function (instance) {
+        cryptosportInstance = instance;
+
+        console.log(cryptosportInstance)
+
+        var owner = $('#owner').val();
+        var name = $('#name').val();
+        var price = $('#price').val();
+
+        return cryptosportInstance.createPromoPerson(owner, name, price).call();
+      }).catch(function (err) {
+        console.log(err.message);
+      })
+    });
   },
 };
 
@@ -82,6 +82,3 @@ $(function () {
     App.init();
   });
 });
-
-
-
