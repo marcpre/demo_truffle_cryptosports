@@ -81,7 +81,7 @@ contract CryptoSportsToken is ERC721 {
   }
 
   /*** CONSTRUCTOR ***/
-  function CelebrityToken() public {
+  function CryptoSportsToken() public {
     ceoAddress = msg.sender;
     cooAddress = msg.sender;
   }
