@@ -8,7 +8,7 @@
 
 1. Start testrpc
 
-`ganache-cli -p 7545`
+`ganache-cli -p 8545`
 
 2. Run
 
