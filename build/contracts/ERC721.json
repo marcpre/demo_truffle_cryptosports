@@ -189,10 +189,10 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.4.18; // solhint-disable-line\r\n\r\n/// @title Interface for contracts conforming to ERC-721: Non-Fungible Tokens\r\n/// @author Dieter Shirley <dete@axiomzen.co> (https://github.com/dete)\r\ncontract ERC721 {\r\n  // Required methods\r\n  function approve(address _to, uint256 _tokenId) public;\r\n  function balanceOf(address _owner) public view returns (uint256 balance);\r\n  function implementsERC721() public pure returns (bool);\r\n  function ownerOf(uint256 _tokenId) public view returns (address addr);\r\n  function takeOwnership(uint256 _tokenId) public;\r\n  function totalSupply() public view returns (uint256 total);\r\n  function transferFrom(address _from, address _to, uint256 _tokenId) public;\r\n  function transfer(address _to, uint256 _tokenId) public;\r\n\r\n  event Transfer(address indexed from, address indexed to, uint256 tokenId);\r\n  event Approval(address indexed owner, address indexed approved, uint256 tokenId);\r\n\r\n  // Optional\r\n  // function name() public view returns (string name);\r\n  // function symbol() public view returns (string symbol);\r\n  // function tokenOfOwnerByIndex(address _owner, uint256 _index) external view returns (uint256 tokenId);\r\n  // function tokenMetadata(uint256 _tokenId) public view returns (string infoUrl);\r\n}\r\n",
-  "sourcePath": "c:\\Users\\marcus\\Desktop\\Coding Projects\\demo_truffle_cryptosports\\contracts\\ERC721.sol",
+  "sourcePath": "C:\\Users\\marcus\\Desktop\\Coding Projects\\demo_truffle_cryptosports\\contracts\\ERC721.sol",
   "ast": {
     "attributes": {
-      "absolutePath": "/c/Users/marcus/Desktop/Coding Projects/demo_truffle_cryptosports/contracts/ERC721.sol",
+      "absolutePath": "/C/Users/marcus/Desktop/Coding Projects/demo_truffle_cryptosports/contracts/ERC721.sol",
       "exportedSymbols": {
         "ERC721": [
           1074
@@ -1121,5 +1121,5 @@
   },
   "networks": {},
   "schemaVersion": "1.0.1",
-  "updatedAt": "2018-02-04T18:10:08.804Z"
+  "updatedAt": "2018-02-06T20:22:24.460Z"
 }

@@ -28,7 +28,7 @@ App = {
 
       // Set the provider for our contract
       App.contracts.CryptoSportsToken.setProvider(App.web3Provider);
-
+      
       return App.bindEvents();
     });
   },
