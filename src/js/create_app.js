@@ -28,17 +28,17 @@ App = {
 
       // Set the provider for our contract
       App.contracts.CryptoSportsToken.setProvider(App.web3Provider);
-      
+
       return App.bindEvents();
     });
   },
 
   bindEvents: function () {
-    $(document).on('click', '.btn-create', App.createPerson());
+    $(document).on('click', '.btn-create', App.createPerson);
   },
 
-  createPerson: function () {
-    //event.preventDefault();
+  createPerson: function (event) {
+    event.preventDefault();
     var cryptosportInstance;
 
     console.log("test")
@@ -69,7 +69,7 @@ App = {
         var name = $('#name').val();
         var price = $('#price').val();
 
-        return cryptosportInstance.createPromoPerson(owner, name, price).call();
+        return cryptosportInstance.createPromoPerson.sendTransaction(owner, name, price);
       }).catch(function (err) {
         console.log(err.message);
       })
